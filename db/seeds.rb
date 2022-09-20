@@ -1,18 +1,23 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 
+puts "Destroying previous records"
 Bicycle.destroy_all
+puts "Previous records destroyed"
 
+puts "Creating bicycles"
 Bicycle.create!(
   title: "test",
-  category: "VTT",
+  category: "road",
   description: "A test bicycle",
-  price: 1000,
+  price_per_day: 1000,
   size: "small",
   user: User.all.first
+)
+
+puts "Bicycles created"
+Booking.create!(
+  bicycle: Bicycle.all.first,
+  start_date: "01-09-2022".to_date,
+  end_date: "30-09-2022".to_date
 )

@@ -1,9 +1,9 @@
 class Bicycle < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
-  validates :title, :category, :description, :price, :user, presence: true
-  validates :price, numericality: { only_integer: true, greater_than: 0 }
+  validates :title, :category, :description, :price_per_day, :user, presence: true
+  validates :price_per_day, numericality: { only_integer: true, greater_than: 0 }
   validates :size, inclusion: { in: %w[small medium large],
                                 message: "Sorry, %<value> is not a size we accept" }
   validates :category, inclusion: { in: %w[road gravel fixie child mountain city other],
