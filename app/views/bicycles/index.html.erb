@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row my-2">
+    <% @bicycles.each do |bicycle| %>
+      <%= render partial: "shared/bicycle-card", locals: { bicycle: bicycle } %>
+    <% end %>
+  </div>
+</div>

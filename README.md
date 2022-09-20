@@ -21,6 +21,7 @@ Generate models:
 - Generate reviews controller (new, create, index, destroy)
 User Stories:
 
+I can see all the available bicycles [X]
 I can add a bicycle to rent []
 I can edit the details of a bicycle I'm offering to rent []
 I can remove a bicycle I'm offering for rent []
