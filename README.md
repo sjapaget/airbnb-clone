@@ -1,11 +1,20 @@
 AirBnB clone to practice for the post-wagon certification
 
-To do:
+Notes:
+
+Model descriptions:
+- bicycle - represents a bicycle that belongs to a user, can be offered out to rent for specific periods (bookings) and can be rented by another user for a specific period (reservations)
+- booking - a period of time in which a user decides to make their bicycle avaiable for rent.
+- reservation - a period of time a user wishes to rent a bicycle for.
+- review - belong to a reservation, user can leave one per reservation they have
+
+TODO:
 
 Generate models:
-- bicycles => title, category, description, price:integer, size: integer, photo, user_id:references
-- bookings => bicycle_id:references, user_id:references, start_date:date, end_date:date
-- reviews => rating:integer, content, booking_id:references, user_id:references
+- bicycle => title, category, description, price:integer, size: integer, photo, user_id:references [X]
+- booking => bicycle:references, start_date:date end_date:date [X]
+- reservation => bicycle_id:references, user_id:references, start_date:date, end_date:date []
+- review => rating:integer, content, reservation_id:references []
 
 - Generate bicycles controller (all 7 crud actions)
 - Generate bookings controller (new, create, index, show, destroy)
