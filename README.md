@@ -23,8 +23,8 @@ User Stories:
 
 I can see all the available bicycles [X]
 I can add a bicycle to rent [X]
-I can see the details of a specific bicycle []
-I can edit the details of a bicycle I'm offering to rent []
+I can see the details of a specific bicycle [X]
+I can edit the details of a bicycle I'm offering to rent [X]
 I can remove a bicycle I'm offering for rent []
 
 I can rent a bicycle on the app for a fixed period []
