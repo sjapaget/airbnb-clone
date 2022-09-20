@@ -13,6 +13,9 @@
           <h3 class="card-title"><%= booking.bicycle.title %></h3>
           <p>From: <%= booking.start_date.strftime("%m/%d/%Y") %></p>
           <p>To: <%= booking.end_date.strftime("%m/%d/%Y") %></p>
+          <div>
+            <%= link_to "Modify", edit_booking_path(booking) %>
+          </div>
         </div>
       </div>
     </div>
