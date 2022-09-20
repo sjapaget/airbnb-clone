@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <%= image_tag @bicycle.photo, class: "img-fluid" %>
+    </div>
+    <div class="col-6">
+      <h3><%= @bicycle.title %></h3>
+      <p><%= @bicycle.description %></p>
+      <ul class="list-group">
+        <li class="list-group-item">Owner: <%= @bicycle.user.first_name %></li>
+        <li class="list-group-item">Type: <%= @bicycle.category.capitalize %></li>
+        <li class="list-group-item">Size: <%= @bicycle.size.capitalize %></li>
+        <li class="list-group-item"><i class="fa-solid fa-euro-sign"></i> <%= @bicycle.price_per_day.fdiv(100) %></li>
+      </ul>
+      <% if policy(@bicycle).edit? %>
+        <%= link_to "Edit", edit_bicycle_path(@bicycle) %>
+      <% end %>
+      <%= link_to "Delete", @bicycle, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@bicycle).destroy? %>
+    </div>
+  </div>
+</div>

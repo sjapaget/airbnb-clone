@@ -37,7 +37,7 @@ puts "Creating bicycles"
     title: Faker::Lorem.sentence(word_count: rand(1..5)),
     category: Bicycle::CATEGORIES.sample,
     description: Faker::Lorem.paragraph,
-    price_per_day: rand(1000..15000),
+    price_per_day: rand(1000..15_000),
     size: Bicycle::SIZES.sample,
     user: User.all.sample,
     photo: bicycle_images.sample

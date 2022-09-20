@@ -13,4 +13,5 @@ class Bicycle < ApplicationRecord
 
   SIZES = %w[small medium large]
   CATEGORIES = %w[road gravel fixie child mountain city other]
+  DEFAULT_IMG = "https://media.istockphoto.com/vectors/image-preview-icon-picture-placeholder-for-website-or-uiux-design-vector-id1222357475?k=20&m=1222357475&s=612x612&w=0&h=jPhUdbj_7nWHUp0dsKRf4DMGaHiC16kg_FSjRRGoZEI="
 end

@@ -1,0 +1,11 @@
+<div class="col-4">
+  <div class="card mb-2">
+    <%= link_to bicycle_path(bicycle) do %>
+      <%= image_tag bicycle.photo, class: "card-img-top"  %>
+      <div class="card-body">
+        <h5 class="card-title"><%= bicycle.title %></h5>
+        <p class="card-text"><%= bicycle.description.truncate(100) %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
