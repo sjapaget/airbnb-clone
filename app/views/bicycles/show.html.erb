@@ -15,8 +15,7 @@
       <% if policy(@bicycle).edit? %>
         <%= link_to "Edit", edit_bicycle_path(@bicycle) %>
       <% end %>
-
-        <%= link_to "Remove", "#" %>
+      <%= link_to "Delete", @bicycle, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@bicycle).destroy? %>
     </div>
   </div>
 </div>
