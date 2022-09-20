@@ -13,7 +13,7 @@ TODO:
 Generate models:
 - bicycle => title, category, description, price:integer, size: integer, photo, user_id:references [X]
 - booking => bicycle:references, start_date:date end_date:date [X]
-- reservation => bicycle_id:references, user_id:references, start_date:date, end_date:date []
+- reservation => bicycle_id:references, user_id:references, start_date:date, end_date:date [X]
 - review => rating:integer, content, reservation_id:references []
 
 - Generate bicycles controller (all 7 crud actions)
