@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Bicycle.destroy_all
+
+Bicycle.create!(
+  title: "test",
+  category: "VTT",
+  description: "A test bicycle",
+  price: 1000,
+  size: "small",
+  user: User.all.first
+)
