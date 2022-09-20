@@ -1,0 +1,8 @@
+<%= simple_form_for bicycle do |f|  %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :category, collection: Bicycle::CATEGORIES %>
+  <%= f.input :size, collection: Bicycle::SIZES %>
+  <%= f.input :price_per_day %>
+  <%= f.button :submit, input_html: { class: "btn btn-primary" } %>
+<% end %>
