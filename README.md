@@ -27,7 +27,7 @@ I can see the details of a specific bicycle [X]
 I can edit the details of a bicycle I'm offering to rent [X]
 I can remove a bicycle I'm offering for rent [X]
 
-I can see all the periods for which my bicycle is available to rent []
+I can see all the periods for which my bicycle is available to rent [X]
 I can create a period for which my bicycle is available to rent []
 I can modify a period for which my bicycle is available to rent []
 I can remove a period for which my bicycle is available to rent []

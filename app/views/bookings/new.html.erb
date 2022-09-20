@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <%= simple_form_for(@booking) do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.association :bicycle, collection: Bicycle.where(user: current_user) %>
+        <%= f.button :submit, input_html: { class: "btn btn-primary" } %>
+      <% end %>
+    </div>
+  </div>
+</div>
