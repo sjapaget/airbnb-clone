@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_20_092942) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_20_100434) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,6 +36,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_20_092942) do
     t.index ["bicycle_id"], name: "index_bookings_on_bicycle_id"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "bicycle_id", null: false
+    t.bigint "user_id", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bicycle_id"], name: "index_reservations_on_bicycle_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -52,4 +63,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_20_092942) do
 
   add_foreign_key "bicycles", "users"
   add_foreign_key "bookings", "bicycles"
+  add_foreign_key "reservations", "bicycles"
+  add_foreign_key "reservations", "users"
 end
