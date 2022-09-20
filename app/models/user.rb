@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :bicycles, dependent: :destroy
+  has_many :bookings, through: :bicycles
   has_many :reservations, dependent: :destroy
 end
