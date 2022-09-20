@@ -22,7 +22,8 @@ Generate models:
 User Stories:
 
 I can see all the available bicycles [X]
-I can add a bicycle to rent []
+I can add a bicycle to rent [X]
+I can see the details of a specific bicycle []
 I can edit the details of a bicycle I'm offering to rent []
 I can remove a bicycle I'm offering for rent []
 

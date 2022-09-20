@@ -6,6 +6,10 @@ class BicyclePolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    true
+  end
+
   def new?
     create?
   end
