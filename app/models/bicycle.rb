@@ -10,4 +10,7 @@ class Bicycle < ApplicationRecord
   validates :category, inclusion: { in: %w[road gravel fixie child mountain city other],
                                     message: "Sorry, %<value> is not a category we accept" }
   validates :title, :description, length: { minimum: 1 }
+
+  SIZES = %w[small medium large]
+  CATEGORIES = %w[road gravel fixie child mountain city other]
 end
