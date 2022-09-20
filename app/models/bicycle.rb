@@ -1,5 +1,6 @@
 class Bicycle < ApplicationRecord
   belongs_to :user
+  has_many :bookings
 
   validates :title, :category, :description, :price, :user, presence: true
   validates :price, numericality: { only_integer: true, greater_than: 0 }
