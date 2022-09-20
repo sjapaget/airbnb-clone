@@ -21,4 +21,8 @@ class BookingPolicy < ApplicationPolicy
   def update?
     record.bicycle.user == user
   end
+
+  def destroy?
+    record.bicycle.user == user
+  end
 end

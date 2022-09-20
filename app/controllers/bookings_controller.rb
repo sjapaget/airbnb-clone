@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, only: %I[edit update destroy]
+
   def index
     @bookings = policy_scope(Booking).joins(:bicycle).where(bicycle: { user: current_user })
   end
@@ -21,12 +23,10 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.find(params[:id])
     authorize @booking
   end
 
   def update
-    @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
       redirect_to bookings_path
     else
@@ -35,9 +35,20 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def destroy
+    @booking.destroy
+
+    redirect_to bookings_path, status: :see_other
+    authorize @booking
+  end
+
   private
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end
