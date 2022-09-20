@@ -1,5 +1,5 @@
 class BicyclesController < ApplicationController
-  before_action :set_bicycle, only: %I[show]
+  before_action :set_bicycle, only: %I[show edit update]
   def index
     @bicycles = policy_scope(Bicycle)
   end
@@ -22,6 +22,19 @@ class BicyclesController < ApplicationController
       redirect_to bicycles_path
     else
       render :new, status: :unprocessable_entity
+    end
+    authorize @bicycle
+  end
+
+  def edit
+    authorize @bicycle
+  end
+
+  def update
+    if @bicycle.update(bicycle_params)
+      redirect_to bicycle_path(@bicycle)
+    else
+      render :edit, status: :unprocessable_entity
     end
     authorize @bicycle
   end
