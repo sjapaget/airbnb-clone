@@ -1,7 +1,7 @@
 class Bicycle < ApplicationRecord
   geocoded_by :address
-  afer_validation :geocode, if: :will_save_change_to_address?
-  
+  after_validation :geocode, if: :will_save_change_to_address?
+
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many :reservations, dependent: :destroy
