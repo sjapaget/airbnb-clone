@@ -11,7 +11,11 @@
       <% @bookings.each do |booking| %>
       <div class="col-4">
         <div class="card">
-          <%= image_tag booking.bicycle.photo, class: "card-img-top"  %>
+          <% if booking.bicycle.photo.key.nil? %>
+            <%= image_tag Bicycle::DEFAULT_IMG, class: "card-img-top" %>
+          <% else %>
+            <%= cl_image_tag booking.bicycle.photo.key, class: "card-img-top", crop: :fill %>
+          <% end %>
           <div class="card-body">
             <h3 class="card-title"><%= booking.bicycle.title %></h3>
             <p>From: <%= booking.start_date.strftime("%d/%m/%Y") %></p>
