@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <%= image_tag @bicycle.photo, class: "img-fluid" %>
+      <% if @bicycle.photo.key.nil? %>
+      <%= image_tag Bicycle::DEFAULT_IMG, class: "img-fluid" %>
+    <% else %>
+      <%= cl_image_tag @bicycle.photo.key, class: "img-fluid", crop: :fill %>
+    <% end %>
     </div>
     <div class="col-6">
       <h3><%= @bicycle.title %></h3>

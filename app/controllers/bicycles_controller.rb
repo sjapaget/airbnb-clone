@@ -23,7 +23,6 @@ class BicyclesController < ApplicationController
   def create
     @bicycle = Bicycle.new(bicycle_params)
     @bicycle.user = current_user
-    @bicycle.photo = Bicycle::DEFAULT_IMG unless params[:photo].present?
 
     if @bicycle.save
       redirect_to bicycles_path
