@@ -12,10 +12,13 @@
         <li class="list-group-item">Size: <%= @bicycle.size.capitalize %></li>
         <li class="list-group-item"><i class="fa-solid fa-euro-sign"></i> <%= @bicycle.price_per_day.fdiv(100) %></li>
       </ul>
-      <% if policy(@bicycle).edit? %>
-        <%= link_to "Edit", edit_bicycle_path(@bicycle) %>
-      <% end %>
-      <%= link_to "Delete", @bicycle, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@bicycle).destroy? %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <%= link_to "Edit", edit_bicycle_path(@bicycle) if policy(@bicycle).edit?%>
+      <%= link_to "Delete", bicycle_path(@bicycle), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@bicycle).destroy? %>
+      <%= link_to "Rent this bicycle", new_bicycle_reservation_path(@bicycle) unless @bicycle.user == current_user %>
     </div>
   </div>
 </div>
