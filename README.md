@@ -17,8 +17,14 @@ Generate models:
 - review => rating:integer, content, reservation_id:references []
 
 - Generate bicycles controller (all 7 crud actions) [X]
-- Generate bookings controller (new, create, index, show, destroy)
-- Generate reviews controller (new, create, index, destroy)
+- Generate bookings controller (new, create, index, show, destroy) [X]
+- Generate reviews controller (new, create, index, destroy) [X]
+
+Missing features :
+- Notion of location / address on bicycles
+- Ability to upload photos w/ cloudinary
+
+
 User Stories:
 
 I can see all the available bicycles [X]
@@ -34,7 +40,7 @@ I can remove a period for which my bicycle is available to rent [X]
 
 I can see a list of my upcoming rentals [X]
 I can rent a bicycle on the app for a fixed period [X]
-I can remove a rental I have reserved on the app []
+I can remove a rental I have reserved on the app [X]
 
 I can leave a review of a bicycle I have previously rented []
 I can remove a review I have left of a bicycle []
