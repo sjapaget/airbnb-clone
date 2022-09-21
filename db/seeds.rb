@@ -18,6 +18,22 @@ bicycle_images = [
   "https://images.unsplash.com/photo-1571333250630-f0230c320b6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGJpY3ljbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60"
 ]
 
+bicycle_addresses = [
+  "36 Bd de Sebastopol, 75004 Paris",
+  "38 Rue Saint-Sulpice, 75006 Paris",
+  "20 Rue Miollis, 75015 Paris",
+  "14 Rue Claude Lorrain, 75016 Paris",
+  "1 Av. General Sarrail, 75016",
+  "283-285 Rue Lecourbe, 75015 Paris",
+  "102 Av. du Général Leclerc, 75014 Paris",
+  "45 Rue des Petits Carreaux, 75002 Paris",
+  "10 Rue de la Victoire, 75009 Paris",
+  "13 Rue Rambuteau, 75004 Paris",
+  "54 Av. des Gobelins, 75013 Paris",
+  "88 Rue Mstislav Rostropovitch, 75017 Paris",
+  "58 Rue d'Aubervilliers, 75019 Paris"
+]
+
 puts "Destroying previous records"
 User.destroy_all
 Bicycle.destroy_all
@@ -40,7 +56,8 @@ puts "Creating bicycles"
     price_per_day: rand(1000..15_000),
     size: Bicycle::SIZES.sample,
     user: User.all.sample,
-    photo: bicycle_images.sample
+    photo: bicycle_images.sample,
+    address: bicycle_addresses.sample
   )
 end
 puts "#{Bicycle.all.length} Bicycles Created"
