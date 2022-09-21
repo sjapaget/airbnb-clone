@@ -20,6 +20,7 @@
               <%= link_to "All Bicycles", bicycles_path, class: "dropdown-item" %>
               <%= link_to "Add a Bicycle", new_bicycle_path, class: "dropdown-item" %>
               <%= link_to "Your bicycles to rent", bookings_path, class: "dropdown-item" %>
+              <%= link_to "Your upcoming rentals", reservations_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

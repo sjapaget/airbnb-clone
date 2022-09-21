@@ -32,6 +32,7 @@ I can create a period for which my bicycle is available to rent [X]
 I can modify a period for which my bicycle is available to rent [X]
 I can remove a period for which my bicycle is available to rent [X]
 
+I can see a list of my upcoming rentals
 I can rent a bicycle on the app for a fixed period []
 I can remove a rental I have reserved on the app []
 
