@@ -2,6 +2,13 @@ class BicyclesController < ApplicationController
   before_action :set_bicycle, only: %I[show edit update destroy]
   def index
     @bicycles = policy_scope(Bicycle)
+
+    @markers = @bicycles.geocoded.map do |bicycle|
+      {
+        lat: bicycle.latitude,
+        lng: bicycle.longitude
+      }
+    end
   end
 
   def show
