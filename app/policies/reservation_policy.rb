@@ -13,4 +13,8 @@ class ReservationPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def destroy?
+    record.id = user
+  end
 end

@@ -6,6 +6,7 @@ class ReservationsController < ApplicationController
   def new
     @bicycle = Bicycle.find(params[:bicycle_id])
     @reservation = Reservation.new
+
     authorize @reservation
   end
 
@@ -19,7 +20,16 @@ class ReservationsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+
     authorize @reservation
+  end
+
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
+    @reservation.destroy
+
+    redirect_to reservations_path, status: :see_other
   end
 
   private
